@@ -35,7 +35,7 @@ public class Runner{
 
 
 class Memory{
-	ArrayList<Event> events;
+	private ArrayList<Event> events;
 
 	public Memory(){
 		events = new ArrayList<Event>();
@@ -82,7 +82,7 @@ class Memory{
 		return current;
 
 	}
-	public static double relevance(Event e, String... args){
+	private static double relevance(Event e, String... args){
 		
 		return e.getWeight() * e.findMatches(args);
 	}
@@ -90,12 +90,12 @@ class Memory{
 }
 
 class Event{
-	public String eventID;
-	public ArrayList<Frame> frames;
-	public double weight;
-	String textBlob;
-	int weightMax = 10;
-	int weightMin = 1;
+	private String eventID;
+	private ArrayList<Frame> frames;
+	private double weight;
+	private String textBlob;
+	private int weightMax = 10;
+	private int weightMin = 1;
 
 	public Event(String id){
 		this.textBlob = "";
